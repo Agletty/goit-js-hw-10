@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #2e2f42;
+
+  display: inline-table;
+  text-align: left;
+  flex-wrap: wrap;
+
+  width: 1440px;
+  height: 496px;
+  padding: 36px 929px 316px 156px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+input {
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.64px;
+  width: 272px;
+  height: 40px;
+  margin-right: 8px;
+  margin-bottom: 32px;
+  border-radius: 4px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+input:hover {
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+input.active {
+  border-radius: 4px;
+  border: 1px solid #4e75ff;
+}
+input:disabled {
+  color: #808080;
+  border-radius: 4px;
+  background: #fafafa;
+}
+button {
+  display: inline-flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  color: #fff;
+  width: 75px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.64px;
+  border-radius: 8px;
+  background: #4e75ff;
+}
+
+button :hover {
+  background: #6c8cff;
+}
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #989898;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.64px;
+  border-radius: 8px;
+  background: #cfcfcf;
+}
+.timer {
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 120% */
+  letter-spacing: 1.6px;
+  display: flex;
+
+  justify-content: center;
+  gap: 16px;
+}
+.field {
+  width: 82px;
+  height: 72px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.64px;
+}
+
+.value {
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px; /* 120% */
+  letter-spacing: 1.6px;
+}
+.label {
+  color: #2e2f42;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
