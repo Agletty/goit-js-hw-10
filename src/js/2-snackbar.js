@@ -5,6 +5,18 @@ const form = document.querySelector('form');
 const delayInput = form.querySelector('[name="delay"]');
 const radioButtons = form.querySelectorAll('[name="state"]');
 
+function getPromise(delay, state) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve(delay);
+      } else {
+        reject(delay);
+      }
+    }, delay);
+  });
+}
+
 form.addEventListener('submit', event => {
   event.preventDefault();
 
@@ -17,28 +29,15 @@ form.addEventListener('submit', event => {
 
   const promise = getPromise(delay, state);
 
-  function getPromise(delay, state) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (state === 'fulfilled') {
-          resolve(delay);
-        } else {
-          reject(delay);
-        }
-      }, delay);
-    });
-  }
   promise
     .then(delay => {
       iziToast.success({
-        title: '✅ Fulfilled promise',
-        message: `in ${delay}ms`,
+        title: `✅ Fulfilled promise in ${delay}ms`,
       });
     })
     .catch(delay => {
       iziToast.error({
-        title: '❌ Rejected promise',
-        message: `in ${delay}ms`,
+        title: `❌ Rejected promise in ${delay}ms`,
       });
     });
 });
