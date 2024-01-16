@@ -37,8 +37,12 @@ function onClose(selectedDates) {
     });
     startButton.disabled = true;
   } else {
-    userSelectedDate = selectedDates[0];
-    startButton.disabled = false;
+    if (isTimerRunning) {
+      input.disabled = true;
+    } else {
+      userSelectedDate = selectedDates[0];
+      startButton.disabled = false;
+    }
   }
 }
 
@@ -48,7 +52,6 @@ function onStartTimer() {
   }
 
   startButton.disabled = true;
-  input.disabled = true;
 
   if (intervalId) {
     clearInterval(intervalId);
@@ -61,11 +64,10 @@ function onStartTimer() {
 
     if (diff <= 0) {
       clearInterval(intervalId);
-      input.disabled = false;
-      input.value = formatDate(new Date());
 
-      isTimerRunning = false;
-      startButton.disabled = false;
+      if (isTimerRunning === false) {
+        input.disabled = true;
+      }
     }
   }, 1000);
 

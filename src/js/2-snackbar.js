@@ -1,7 +1,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const form = document.querySelector('form');
+const form = document.querySelector('.form');
 const delayInput = form.querySelector('[name="delay"]');
 const radioButtons = form.querySelectorAll('[name="state"]');
 
